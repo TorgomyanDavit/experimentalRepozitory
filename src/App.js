@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
+import Slider from './Slider/slider';
+import DragDrop from './Drag&Drop/DragDrop';
+import Uploadfile from './uploadFail/uploadfile';
+import SimpleClassComponent from './simple/simple';
+import Inheritance from './simple/simple';
+import Header from './header/header';
+import {Abb} from './uploadFail/uploadfile';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Router>
+                <Header/>
+                <Route path="/slider" component={Slider}/>
+                <Route path="/dragdrop" component={DragDrop}/>
+                <Route path="/uploadfile" component={ Uploadfile }/>
+            </Router>
+            {/* <Abb/> */}
+            {/* <Inheritance/> */}
+            {/* <SimpleClassComponent/> */}
+        </div>
+    )
 }
-
-export default App;
+export default App
